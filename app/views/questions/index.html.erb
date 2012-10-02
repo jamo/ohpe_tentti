@@ -1,0 +1,24 @@
+<h1>Listing pastes</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @questions.each do |q| %>
+  <tr>
+    <td><%= q.nick %></td>
+    <td><%= q.email %></td>
+    <td><%= link_to 'Show', question_path(q.key) %></td>
+    <td><%= link_to 'Edit', edit_question_path(q.key) %></td>
+    <td><%= link_to 'Destroy', q, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Answer', new_question_path %>

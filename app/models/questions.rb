@@ -1,11 +1,11 @@
-class Paste < ActiveRecord::Base
+class Questions < ActiveRecord::Base
   #include ActionView::Helpers
     include ActionView::Helpers::NumberHelper
 
-  attr_accessible :body, :filename, :nick, :title, :encoding
-  validates :body, :presence => true, :length => {:maximum => 1.megabytes}
-  validates :key, :uniqueness => true
-  LANG = {:Java => 'java', 'C++' => 'cpp', 'JavaScript' => 'java_script', 'Plain Text' => 'text', :HTML => 'html',:Ruby => 'ruby'}
+  attr_accessible :nick, :email, :other, :email_confirmation
+  validates :nick, :uniqueness => true, :length => {:minimum => 2}
+  validates :email, :confirmation => true, :presence => true, :uniqueness => true
+ 
 =begin
   avail = :'c++'       => :cpp,
       :cplusplus   => :cpp,
@@ -24,14 +24,9 @@ class Paste < ActiveRecord::Base
       :yml         =>:text
 =end  
   before_create :generate_key
-  before_save :count_size
   
   def generate_key 
-    self.key = Digest::SHA1.hexdigest(Time.now.to_s+Random.rand.to_s+self.body).slice(0..7)
-  end
-  
-  def count_size
-    self.size = number_to_human_size(self.body.bytesize)
+    self.key = Digest::SHA1.hexdigest(Time.now.to_s+Random.rand.to_s+self.nick).slice(0..15)
   end
   
 end
