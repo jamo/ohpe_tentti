@@ -5,6 +5,7 @@ class AnswersController < ApplicationController
   # GET /answers
   # GET /answers.json
   def index
+    debugger
     @answers = Answer.all
 
     respond_to do |format|
@@ -56,7 +57,7 @@ class AnswersController < ApplicationController
   # PUT /answers/1
   # PUT /answers/1.json
   def update
-    @answer = Answer.find(params[:id])
+    @answer = Answer.find_by_key(params[:id])
 
     respond_to do |format|
       if @answer.update_attributes(params[:answer])
@@ -70,7 +71,7 @@ class AnswersController < ApplicationController
   # DELETE /answers/1
   # DELETE /answers/1.json
   def destroy
-    @answer = Answer.find(params[:id])
+    @answer = Answer.find_by_key(params[:id])
     @answer.destroy
 
     respond_to do |format|
