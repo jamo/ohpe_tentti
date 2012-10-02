@@ -1,10 +1,9 @@
 class Answer < ActiveRecord::Base
-  attr_accessible :email, :nick, :other
+  attr_accessible :email, :nick, :other, :name
   
-  attr_accessible :nick, :email, :other, :email_confirmation
   validates :nick, :uniqueness => true, :length => {:minimum => 2}
   validates :email, :confirmation => true, :presence => true, :uniqueness => true
- 
+  validates :name, :presence => true
   before_create :generate_key
   
   def generate_key 
