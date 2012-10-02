@@ -11,21 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120924072643) do
+ActiveRecord::Schema.define(:version => 20121002210212) do
 
-  create_table "pastes", :force => true do |t|
-    t.text     "body"
-    t.string   "filename"
+  create_table "answers", :force => true do |t|
     t.string   "nick"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.string   "title"
-    t.string   "encoding",   :default => "java"
+    t.string   "email"
+    t.text     "other"
     t.string   "key"
-    t.string   "size",       :default => "0 bytes"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  add_index "pastes", ["key"], :name => "index_pastes_on_key"
+  add_index "answers", ["key"], :name => "index_answers_on_key"
+
+  create_table "questions", :force => true do |t|
+    t.string "nick"
+    t.string "email"
+    t.text   "other"
+    t.string "key"
+  end
+
+  add_index "questions", ["key"], :name => "index_questions_on_key"
 
   create_table "sessions", :force => true do |t|
     t.string   "home"

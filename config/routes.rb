@@ -1,5 +1,5 @@
 Pastebin::Application.routes.draw do
-  resources :pastes
+  resources :answers
   resources :sessions
   resources :users
   
@@ -9,7 +9,7 @@ Pastebin::Application.routes.draw do
   match "home", :to => "sessions#home"
   match "profile", :to => "sessions#profile"
   match "setting", :to => "sessions#setting"
-  root :to =>'pastes#new'
+  root :to =>'answers#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
