@@ -19,7 +19,7 @@
     <td><%= answer.other %></td>
     <td><%= link_to 'Show', answer_path(answer.key) %></td>
     <td><%= link_to 'Edit', edit_answer_path(answer.key) %></td>
-    <td><%= link_to 'Destroy', answer.key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

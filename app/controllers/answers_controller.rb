@@ -71,7 +71,7 @@ class AnswersController < ApplicationController
   # DELETE /answers/1
   # DELETE /answers/1.json
   def destroy
-    @answer = Answer.find_by_key(params[:id])
+    @answer = Answer.find(params[:id])
     @answer.destroy
 
     respond_to do |format|
