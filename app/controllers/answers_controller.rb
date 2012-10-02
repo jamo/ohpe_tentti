@@ -16,7 +16,6 @@ class AnswersController < ApplicationController
   # GET /answers/1
   # GET /answers/1.json
   def show
-    debugger
     @answer = Answer.find_by_key(params[:id])
 
     respond_to do |format|
