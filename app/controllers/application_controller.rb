@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  #before_filter  :authenticate_user
+  before_filter  :authenticate_user
   before_filter :current_user
-  #before_filter :can_access?
+  before_filter :can_access?
   protect_from_forgery
   #protected
   def authenticate_user

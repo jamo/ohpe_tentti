@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Nick</th>
+    <th>Name</th>
     <th>Email</th>
     <th>Other</th>
     <th></th>
@@ -13,6 +14,7 @@
 <% @answers.each do |answer| %>
   <tr>
     <td><%= answer.nick %></td>
+    <td><%= answer.name %></td>
     <td><%= answer.email %></td>
     <td><%= answer.other %></td>
     <td><%= link_to 'Show', answer_path(answer.key) %></td>

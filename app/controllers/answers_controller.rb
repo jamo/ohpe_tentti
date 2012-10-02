@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
   # GET /answers
   # GET /answers.json
   def index
-    debugger
+
     @answers = Answer.all
 
     respond_to do |format|
