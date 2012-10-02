@@ -47,7 +47,7 @@ class AnswersController < ApplicationController
 
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to answer_path(@answer.key), notice: "Kiitos vastauksestasi. " }
+        format.html { redirect_to answer_path(@answer.key), notice: "Kiitos vastauksestasi. Vastauksesi on nyt kirjattu. Olemme yhteydessä hakijoihin lähiaikoina!" }
       else
         format.html { render action: "new" }
       end
