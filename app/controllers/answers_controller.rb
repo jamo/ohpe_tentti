@@ -45,7 +45,7 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(params[:answer])
 
-    note = %Q{Kiitos vastauksestasi. Vastauksesi on nyt kirjattu. Palaamme asiaan lähiaikoina}
+    note = %Q{Kiitos vastauksestasi.}
     respond_to do |format|
       if @answer.save
         format.html { redirect_to answer_path(@answer.key), notice: note }
