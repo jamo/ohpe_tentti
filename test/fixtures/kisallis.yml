@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  opnro: MyString
+  sposti: MyString
+  opintopisteita: 1
+  miksi: MyString
+  opintojen_ka: 9.99
+  aiemmin: MyString
+  miksiSina: MyText
+  mitaOdotat: MyText
+  muuta: MyText
+  lempiolut: MyText
+
+two:
+  name: MyString
+  opnro: MyString
+  sposti: MyString
+  opintopisteita: 1
+  miksi: MyString
+  opintojen_ka: 9.99
+  aiemmin: MyString
+  miksiSina: MyText
+  mitaOdotat: MyText
+  muuta: MyText
+  lempiolut: MyText

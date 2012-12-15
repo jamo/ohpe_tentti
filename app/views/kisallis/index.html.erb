@@ -1,0 +1,43 @@
+<h1>Listing kisallis</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Opnro</th>
+    <th>Sposti</th>
+    <th>Opintopisteita</th>
+    <th>Miksi</th>
+    <th>Opintojen ka</th>
+    <th>Aiemmin</th>
+    <th>Miksisina</th>
+    <th>Mitaodotat</th>
+    <th>Muuta</th>
+    <th>Lempiolut</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @kisallis.each do |kisalli| %>
+  <tr>
+    <td><%= kisalli.name %></td>
+    <td><%= kisalli.opnro %></td>
+    <td><%= kisalli.sposti %></td>
+    <td><%= kisalli.opintopisteita %></td>
+    <td><%= kisalli.miksi %></td>
+    <td><%= kisalli.opintojen_ka %></td>
+    <td><%= kisalli.aiemmin %></td>
+    <td><%= kisalli.miksiSina %></td>
+    <td><%= kisalli.mitaOdotat %></td>
+    <td><%= kisalli.muuta %></td>
+    <td><%= kisalli.lempiolut %></td>
+    <td><%= link_to 'Show', kisalli %></td>
+    <td><%= link_to 'Edit', edit_kisalli_path(kisalli) %></td>
+    <td><%= link_to 'Destroy', kisalli, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Kisalli', new_kisalli_path %>
