@@ -47,7 +47,7 @@ class KisallisController < ApplicationController
 
     respond_to do |format|
       if @kisalli.save
-        format.html { redirect_to @kisalli, notice: 'Kisalli was successfully created.' }
+        format.html { redirect_to @kisalli, notice: 'Kiitos mielenkiinnosta. Hakemuksesi on tallennettu.' }
         format.json { render json: @kisalli, status: :created, location: @kisalli }
       else
         format.html { render action: "new" }

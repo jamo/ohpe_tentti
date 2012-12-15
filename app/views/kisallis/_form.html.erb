@@ -37,9 +37,9 @@
   </div>
   <div>
     <%= f.label "Haetko kisalliksi/ohjaajaksi?" %><br>
-    <%= f.label "Ohjaajaksi" %>
+    <%= f.label "Ohjaajaksi" %><br>
     <%= f.check_box :ohjaaja %>
-    <%= f.label "Kisalliksi" %>
+    <%= f.label "Kisalliksi" %><br>
     <%= f.check_box :kisalli %>
   </div>
   <br>
@@ -56,6 +56,6 @@
     <%= f.text_area :muuta, :cols => 100 %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Tallenna" %>
   </div>
 <% end %>
