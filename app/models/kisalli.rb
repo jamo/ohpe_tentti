@@ -1,5 +1,5 @@
 class Kisalli < ActiveRecord::Base
-  attr_accessible :aiemmin, :lempiolut, :miksi, :miksiSina, :mitaOdotat, :muuta, :name, :opintojen_ka, :opintopisteita, :opnro, :sposti, :ohjaaja, :kisalli
+  attr_accessible :aiemmin, :lempiolut, :miksi, :miksiSina, :mitaOdotat, :muuta, :name, :opintojen_ka, :opintopisteita, :opnro, :sposti, :ohjaaja, :kisalli, :tira
 
   validates :name, :uniqueness => true, :length => {:minimum => 2}
   validates :sposti, :uniqueness => true, :length => {:minimum => 4}
