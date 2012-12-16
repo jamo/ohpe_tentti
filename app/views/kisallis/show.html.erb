@@ -1,47 +1,42 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Nimi:</b>
   <%= @kisalli.name %>
 </p>
 
 <p>
-  <b>Opnro:</b>
+  <b>Opintopisteitä:</b>
   <%= @kisalli.opnro %>
 </p>
 
 <p>
-  <b>Sposti:</b>
+  <b>Sähköpostiosoite:</b>
   <%= @kisalli.sposti %>
 </p>
 
 <p>
-  <b>Opintopisteita:</b>
+  <b>Opintopisteitä:</b>
   <%= @kisalli.opintopisteita %>
 </p>
 
 <p>
-  <b>Miksi:</b>
-  <%= @kisalli.miksi %>
-</p>
-
-<p>
-  <b>Opintojen ka:</b>
+  <b>Opintojen keskiarvo:</b>
   <%= @kisalli.opintojen_ka %>
 </p>
 
 <p>
-  <b>Aiemmin:</b>
+  <b>Minä aiemmin:</b>
   <%= @kisalli.aiemmin %>
 </p>
 
 <p>
-  <b>Miksisina:</b>
+  <b>Miksi sinä?</b>
   <%= @kisalli.miksiSina %>
 </p>
 
 <p>
-  <b>Mitaodotat:</b>
+  <b>Mitä odotat:</b>
   <%= @kisalli.mitaOdotat %>
 </p>
 
@@ -58,8 +53,3 @@
   <b>Kisalliski</b>
   <%= @kisalli.kisalli %>
 </p>
-
-
-
-<%= link_to 'Edit', edit_kisalli_path(@kisalli) %> |
-<%= link_to 'Back', kisallis_path %>
