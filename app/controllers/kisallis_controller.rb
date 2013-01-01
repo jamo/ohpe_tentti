@@ -43,6 +43,7 @@ class KisallisController < ApplicationController
   # POST /kisallis
   # POST /kisallis.json
   def create
+    return
     @kisalli = Kisalli.new(params[:kisalli])
 
     respond_to do |format|
