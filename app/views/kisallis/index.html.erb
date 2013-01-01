@@ -2,16 +2,16 @@
 <p>Filtteröi tuloksia: </p>
 <%= form_tag kisallis_path, :method => :get do  %>
     <%= label  :kisalli, 'Kisalli' %>
-    <%= check_box_tag :kisalli %>
+    <%= check_box_tag :kisalli, '1',params[:kisalli] %>
 
     <%= label  :ohjaaja, 'ohjaaja' %>
-    <%= check_box_tag :ohjaaja %>
+    <%= check_box_tag :ohjaaja, '1', params[:ohjaaja] %>
 
     <%= label  :tira, 'tira' %>
-    <%= check_box_tag :tira %>
+    <%= check_box_tag :tira, '1', params[:tira] %>
 
     <%= label :ka, 'Keskiarvo vähintään' %>
-    <%= text_field_tag :ka %>
+    <%= text_field_tag :ka, params[:ka] %>
 
     <%= submit_tag 'Refresh' %>
 
