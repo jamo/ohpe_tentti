@@ -9,6 +9,7 @@ class KisallisController < ApplicationController
     @kisallis = @kisallis.where(ohjaaja: true) if params[:ohjaaja]
     @kisallis = @kisallis.where(kisalli: true) if params[:kisalli]
     @kisallis = @kisallis.where(tira: true) if params[:tira]
+    @kisallis = @kisallis.where("opintojen_ka >=?", params[:ka]) if params[:ka]
 
     respond_to do |format|
       format.html # index.html.erb
