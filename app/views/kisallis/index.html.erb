@@ -1,4 +1,18 @@
 <h1>Listing kisallis</h1>
+<p>Filtteröi tuloksia: </p>
+<%= form_tag kisallis_path, :method => :get do  %>
+    <%= label  :kisalli, 'Kisalli' %>
+    <%= check_box_tag :kisalli %>
+
+    <%= label  :ohjaaja, 'ohjaaja' %>
+    <%= check_box_tag :ohjaaja %>
+
+    <%= label  :tira, 'tira' %>
+    <%= check_box_tag :tira %>
+
+    <%= submit_tag 'Refresh' %>
+
+<% end %>
 
 <table>
   <tr>

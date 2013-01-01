@@ -5,7 +5,10 @@ class KisallisController < ApplicationController
   # GET /kisallis
   # GET /kisallis.json
   def index
-    @kisallis = Kisalli.all
+    @kisallis = Kisalli.scoped   
+    @kisallis = @kisallis.where(ohjaaja: true) if params[:ohjaaja]
+    @kisallis = @kisallis.where(kisalli: true) if params[:kisalli]
+    @kisallis = @kisallis.where(tira: true) if params[:tira]
 
     respond_to do |format|
       format.html # index.html.erb
