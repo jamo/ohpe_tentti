@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121216144809) do
+ActiveRecord::Schema.define(:version => 20121215040131) do
 
   create_table "answers", :force => true do |t|
     t.string   "nick"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20121216144809) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "name"
+    t.boolean  "deprecated"
   end
 
   add_index "answers", ["key"], :name => "index_answers_on_key"
@@ -41,7 +42,6 @@ ActiveRecord::Schema.define(:version => 20121216144809) do
     t.datetime "updated_at",     :null => false
     t.boolean  "ohjaaja"
     t.boolean  "kisalli"
-    t.boolean  "tira"
   end
 
   create_table "questions", :force => true do |t|

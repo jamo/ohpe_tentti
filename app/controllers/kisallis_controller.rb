@@ -5,7 +5,7 @@ class KisallisController < ApplicationController
   # GET /kisallis
   # GET /kisallis.json
   def index
-    @kisallis = Kisalli.scoped   
+    @kisallis = Kisalli.scoped
     @kisallis = @kisallis.where(ohjaaja: true) if params[:ohjaaja]
     @kisallis = @kisallis.where(kisalli: true) if params[:kisalli]
     @kisallis = @kisallis.where(tira: true) if params[:tira]
