@@ -18,6 +18,7 @@ class AnswersController < ApplicationController
   # GET /answers/1.json
   def show
     @answer = Answer.find_by_key(params[:id])
+    raise "not allowed#{params.inspect}\n#{session.inspect}\n#{@answer.inspect}" unless session[:answer_id] == @answer.id
 
     respond_to do |format|
       format.html # show.html.erb
@@ -28,7 +29,8 @@ class AnswersController < ApplicationController
   # GET /answers/new
   # GET /answers/new.json
   def new
-    @answer = Answer.new
+    session[:answer_id]=nil #:P
+    @answer = Answer.find_by_id(session[:answer_id]) ||  Answer.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -48,6 +50,7 @@ class AnswersController < ApplicationController
     note = %Q{Kiitos vastauksestasi.}
     respond_to do |format|
       if @answer.save
+        session[:answer_id] = @answer.id
         format.html { redirect_to answer_path(@answer.key), notice: note }
       else
         format.html { render action: "new" }
