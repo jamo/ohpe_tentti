@@ -14,10 +14,10 @@ class Answer < ActiveRecord::Base
   end
 
   def validate_email_uniqeness_in_scope
-    errors.add(:email) << "is already taken" if Answer.all.any?{|a| a.email==email}
+    errors.add(:email) << "is already taken" if Answer.current.any?{|a| a.email==email}
   end
 
   def validate_nick_uniqeness_in_scope
-    errors.add(:nick) << "is already taken" if Answer.all.any?{|a| a.nick==nick}
+    errors.add(:nick) << "is already taken" if Answer.current.any?{|a| a.nick==nick}
   end
 end
