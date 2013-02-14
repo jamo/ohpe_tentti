@@ -46,6 +46,7 @@ class AnswersController < ApplicationController
   # POST /answers.json
   def create
     @answer = Answer.new(params[:answer])
+    @answer.deprecated = false
 
     note = %Q{Kiitos vastauksestasi.}
     respond_to do |format|
