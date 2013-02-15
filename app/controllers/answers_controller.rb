@@ -39,8 +39,8 @@ class AnswersController < ApplicationController
 
   # GET /answers/1/edit
   def edit
-    return respond_access_denied if session[:answer_id] == @answer.id or admin?
     @answer = Answer.find_by_key(params[:id])
+    return respond_access_denied if session[:answer_id] == @answer.id or admin?
   end
 
   # POST /answers
