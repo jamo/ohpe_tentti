@@ -40,7 +40,7 @@ class AnswersController < ApplicationController
   # GET /answers/1/edit
   def edit
     @answer = Answer.find_by_key(params[:id])
-    return respond_access_denied if session[:answer_id] == @answer.id or admin?
+    return respond_access_denied unless session[:answer_id] == @answer.id or admin?
   end
 
   # POST /answers
@@ -77,7 +77,7 @@ class AnswersController < ApplicationController
   # DELETE /answers/1
   # DELETE /answers/1.json
   def destroy
-    @answer = Answer.find(params[:id])
+    @answer = Answer.find_by_key(params[:id])
     @answer.destroy
 
     respond_to do |format|
