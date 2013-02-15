@@ -30,7 +30,7 @@ class JatkosController < ApplicationController
 
   def edit
     @jatko = Jatko.find_by_key(params[:id])
-    raise "not allowed" unless sessionn[:jatko_id] == @jatko.id
+    return respond_access_denied  unless sessionn[:jatko_id] == @jatko.id
   end
 
   def create

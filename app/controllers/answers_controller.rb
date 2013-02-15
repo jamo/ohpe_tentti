@@ -18,7 +18,7 @@ class AnswersController < ApplicationController
   # GET /answers/1.json
   def show
     @answer = Answer.find_by_key(params[:id])
-    raise "not allowed#{params.inspect}\n#{session.inspect}\n#{@answer.inspect}" unless session[:answer_id] == @answer.id
+    return respond_access_denied  unless session[:answer_id] == @answer.id or admin?
 
     respond_to do |format|
       format.html # show.html.erb
@@ -39,6 +39,7 @@ class AnswersController < ApplicationController
 
   # GET /answers/1/edit
   def edit
+    return res
     @answer = Answer.find_by_key(params[:id])
   end
 
