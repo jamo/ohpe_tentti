@@ -17,8 +17,8 @@
         %td= link_to jatko.id, jatko_path(jatko)
         %td= jatko.name
         %td= jatko.nick
-        %td= jatko.tira
         %td= jatko.continue
+        %td= jatko.tira
         %td=l jatko.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_jatko_path(jatko.key), :class => 'btn btn-mini'
