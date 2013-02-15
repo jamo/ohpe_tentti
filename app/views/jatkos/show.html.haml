@@ -1,0 +1,21 @@
+- model_class = Jatko
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+
+%p
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
+  = @jatko.name
+%p
+  %strong= model_class.human_attribute_name(:nick) + ':'
+  %br
+  = @jatko.nick
+%p
+  %strong= model_class.human_attribute_name(:continue) + ':'
+  %br
+  = @jatko.continue
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), jatkos_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_jatko_path(@jatko), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), jatko_path(@jatko), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

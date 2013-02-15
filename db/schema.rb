@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121215040131) do
+ActiveRecord::Schema.define(:version => 20130214234751) do
 
   create_table "answers", :force => true do |t|
     t.string   "nick"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(:version => 20121215040131) do
   end
 
   add_index "answers", ["key"], :name => "index_answers_on_key"
+
+  create_table "jatkos", :force => true do |t|
+    t.string   "name"
+    t.string   "nick"
+    t.string   "continue"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "key"
+  end
+
+  add_index "jatkos", ["key"], :name => "index_jatkos_on_key"
 
   create_table "kisallis", :force => true do |t|
     t.string   "name"
@@ -42,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20121215040131) do
     t.datetime "updated_at",     :null => false
     t.boolean  "ohjaaja"
     t.boolean  "kisalli"
+    t.boolean  "tira"
   end
 
   create_table "questions", :force => true do |t|

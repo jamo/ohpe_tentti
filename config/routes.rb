@@ -1,4 +1,7 @@
 Pastebin::Application.routes.draw do
+  resources :jatkos
+
+
   #resources :kisallis
 
   resources :answers

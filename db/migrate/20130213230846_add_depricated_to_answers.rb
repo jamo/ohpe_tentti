@@ -1,6 +1,6 @@
 class AddDepricatedToAnswers < ActiveRecord::Migration
   def up
-    add_column :answers, :deprecated, :boolean ,:defaul => false
+    add_column :answers, :deprecated, :boolean
     Answer.all.each {|a| a.update_attribute(:deprecated, true)}
   end
 
