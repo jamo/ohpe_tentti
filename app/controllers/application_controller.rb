@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  helper :all
   before_filter  :authenticate_user
   before_filter :current_user
   before_filter :can_access?
