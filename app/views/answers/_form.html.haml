@@ -1,0 +1,20 @@
+= form_for @answer, :html => { :class => 'form-inline' } do |f|
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'text_field'
+  .control-group
+    = f.label :nick, :class => 'control-label'
+    .controls
+      = f.text_field :nick, :class => 'text_field'
+  .control-group
+    = f.label :email, :class => 'control-label'
+    .controls
+      = f.text_field :email, :class => 'text_field'
+  .control-group
+    = f.label "Muuta?", :class => 'control-label'
+    .controls
+      = f.text_area :other, :class => 'text_area', rows: 5
+  .form-actions
+    = f.submit "Tallenna", :class => 'btn btn-primary'
+    = link_to "Peruuta", new_answer_path, :class => 'btn'
