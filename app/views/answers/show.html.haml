@@ -1,5 +1,9 @@
 - model_class = Answer
 %p
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
+  = @answer.name
+%p
   %strong= model_class.human_attribute_name(:nick) + ':'
   %br
   = @answer.nick
@@ -11,21 +15,3 @@
   %strong= model_class.human_attribute_name(:other) + ':'
   %br
   = @answer.other
-%p
-  %strong= model_class.human_attribute_name(:key) + ':'
-  %br
-  = @answer.key
-%p
-  %strong= model_class.human_attribute_name(:name) + ':'
-  %br
-  = @answer.name
-%p
-  %strong= model_class.human_attribute_name(:deprecated) + ':'
-  %br
-  = @answer.deprecated
-
-.form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), answers_path, :class => 'btn'
-- if admin?
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_answer_path(@answer), :class => 'btn'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), answer_path(@answer), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

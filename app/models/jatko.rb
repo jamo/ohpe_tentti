@@ -1,5 +1,5 @@
 class Jatko < ActiveRecord::Base
-  attr_accessible :name, :nick, :continue, :key
+  attr_accessible :name, :nick, :continue, :key, :tira
   validates :nick, :length => {:minimum => 2}
   validates :name, :length => {:minimum => 2}
 

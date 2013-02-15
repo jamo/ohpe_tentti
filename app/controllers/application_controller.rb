@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
  
 
  def admin?
-  current_user.admin
+  current_user and current_user.admin?
  end
 
   def current_user

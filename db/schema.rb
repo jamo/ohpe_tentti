@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130214234751) do
+ActiveRecord::Schema.define(:version => 20130215022957) do
 
   create_table "answers", :force => true do |t|
     t.string   "nick"
@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(:version => 20130214234751) do
     t.string   "name"
     t.string   "nick"
     t.string   "continue"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "key"
+    t.boolean  "tira",       :default => false
   end
 
   add_index "jatkos", ["key"], :name => "index_jatkos_on_key"

@@ -38,7 +38,7 @@ class JatkosController < ApplicationController
     respond_to do |format|
       if @jatko.save
         session[:jatko_id] = @jatko.id
-        format.html { redirect_to @jatko, notice: 'Jatko was successfully created.' }
+        format.html { redirect_to jatko_path(@jatko.key), notice: 'Jatko was successfully created.' }
         format.json { render json: @jatko, status: :created, location: @jatko }
       else
         format.html { render action: "new" }
