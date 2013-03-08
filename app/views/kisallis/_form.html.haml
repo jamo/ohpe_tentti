@@ -1,0 +1,65 @@
+= form_for @kisalli, :html => { :class => 'form-inline' } do |f|
+  - if @kisalli.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@kisalli.errors.count, "error")
+        prohibited this kisalli from being saved:
+      %ul
+        - @kisalli.errors.full_messages.each do |msg|
+          %li= msg
+  .control-group
+    = f.label "Nimi"
+    %br/
+    = f.text_field :name
+  .control-group
+    = f.label "Opiskelijanumero"
+    %br/
+    = f.text_field :opnro
+  .control-group
+    = f.label "Sähköpostiosoite"
+    %br/
+    = f.text_field :sposti
+  .control-group
+    = f.label "opintopistemäärä"
+    %br/
+    = f.number_field :opintopisteita
+  .control-group
+    = f.label "Opintopisteiden keskiarvo"
+    %br/
+    = f.text_field :opintojen_ka
+  .control-group
+    = f.label "Oletko ollut aikaisemmin pajaohjaajana/kisällinä/assarina? Jos niin mitä?"
+    %br/
+    = f.text_field :aiemmin
+  .control-group
+    = f.label "Haetko kisalliksi/ohjaajaksi?"
+    %br/
+    = f.label "Ohjaajaksi"
+    = f.check_box :ohjaaja, :class => "checkox"
+    %br/
+    = f.label "Kisälliksi"
+    = f.check_box :kisalli, :class => "checkox"
+    %br/
+  .control-group
+    =f.label "Haluatko ohpeen/ohjaan"
+    %br/
+    = f.label "OhPeen"
+    = f.check_box :ohpe, :class => "checkox"
+    %br/
+    = f.label "OhJaan"
+    = f.check_box :ohja, :class => "checkox"
+    %br/
+  .control-group
+    = f.label "Miksi juuri sinä?"
+    %br/
+    = f.text_area :miksiSina, class: "input-xlarge"
+  .control-group
+    = f.label "Mitä odotat kisällöinniltä/ohjaamiselta?"
+    %br/
+    = f.text_area :mitaOdotat, class: "input-xlarge"
+  .control-group
+    = f.label "Muuta kommentoitavaa"
+    %br/
+    = f.text_area :muuta, class: "input-xlarge"
+  .form-actions
+    = f.submit "Tallenna", class: "btn btn-primary"

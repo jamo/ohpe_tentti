@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'haml-rails'
@@ -14,7 +14,7 @@ end
 
 group :development do
   gem 'sqlite3'
-  gem 'debugger'
+  #gem 'debugger'
 end
 
 

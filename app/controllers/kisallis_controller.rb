@@ -5,7 +5,7 @@ class KisallisController < ApplicationController
   # GET /kisallis
   # GET /kisallis.json
   def index
-    @kisallis = Kisalli.scoped
+    @kisallis = Kisalli.current
     @kisallis = @kisallis.where(ohjaaja: true) if params[:ohjaaja]
     @kisallis = @kisallis.where(kisalli: true) if params[:kisalli]
     @kisallis = @kisallis.where(tira: true) if params[:tira]
@@ -51,7 +51,6 @@ class KisallisController < ApplicationController
   # POST /kisallis
   # POST /kisallis.json
   def create
-    return
     @kisalli = Kisalli.new(params[:kisalli])
 
     respond_to do |format|
