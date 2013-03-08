@@ -3,9 +3,9 @@ class Kisalli < ActiveRecord::Base
 
   scope :current, where(deprecated: false)
 
-  validates :name, :uniqueness => {scope: current}, :length => {:minimum => 2}
-  validates :sposti, :uniqueness => {scope: current}, :length => {:minimum => 4}
-  validates :opnro, :uniqueness => {scope: current}, :length => {:minimum => 7}
+  validates :name, :length => {:minimum => 2}
+  validates :sposti, :length => {:minimum => 4}
+  validates :opnro, :length => {:minimum => 7}
   validates :aiemmin, :presence => true
   validates :miksiSina, :presence => true
   validates :mitaOdotat, :presence => true
