@@ -24,7 +24,7 @@ class KisallisController < ApplicationController
   # GET /kisallis/1
   # GET /kisallis/1.json
   def show
-    @kisalli = Kisalli.find(params[:id])
+    @kisalli = Kisalli.find_by_key(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -45,7 +45,7 @@ class KisallisController < ApplicationController
 
   # GET /kisallis/1/edit
   def edit
-    @kisalli = Kisalli.find(params[:id])
+    @kisalli = Kisalli.find_by_key(params[:id])
   end
 
   # POST /kisallis
@@ -55,7 +55,7 @@ class KisallisController < ApplicationController
 
     respond_to do |format|
       if @kisalli.save
-        format.html { redirect_to @kisalli, notice: 'Kiitos mielenkiinnosta. Hakemuksesi on tallennettu.' }
+        format.html { redirect_to @kisalli.key, notice: 'Kiitos mielenkiinnosta. Hakemuksesi on tallennettu.' }
         format.json { render json: @kisalli, status: :created, location: @kisalli }
       else
         format.html { render action: "new" }
@@ -67,7 +67,7 @@ class KisallisController < ApplicationController
   # PUT /kisallis/1
   # PUT /kisallis/1.json
   def update
-    @kisalli = Kisalli.find(params[:id])
+    @kisalli = Kisalli.find_by_key(params[:id])
 
     respond_to do |format|
       if @kisalli.update_attributes(params[:kisalli])

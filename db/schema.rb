@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315171946) do
+ActiveRecord::Schema.define(:version => 20130315172805) do
 
   create_table "answers", :force => true do |t|
     t.string   "nick"
@@ -60,7 +60,10 @@ ActiveRecord::Schema.define(:version => 20130315171946) do
     t.boolean  "ohja",           :default => false
     t.boolean  "ohpes",          :default => false
     t.boolean  "ohjas",          :default => false
+    t.string   "key"
   end
+
+  add_index "kisallis", ["key"], :name => "index_kisallis_on_key"
 
   create_table "questions", :force => true do |t|
     t.string "nick"

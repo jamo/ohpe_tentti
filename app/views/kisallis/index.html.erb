@@ -32,6 +32,11 @@
     <th>TIRA?</th>
     <th>Ohjaajaksi?</th>
     <th>Kisalliksi?</th>
+    <th>K-OhPeen</th>
+    <th>K-OhJaan</th>
+    <th>S-OhPeen</th>
+    <th>S-OhJaan</th>
+
     <th></th>
     <th></th>
     <th></th>
@@ -52,9 +57,13 @@
     <td><%= kisalli.tira %></td>
     <td><%= kisalli.ohjaaja %></td>
     <td><%= kisalli.kisalli %></td>
-    <td><%= link_to 'Show', kisalli %></td>
-    <td><%= link_to 'Edit', edit_kisalli_path(kisalli) %></td>
-    <td><%= link_to 'Destroy', kisalli, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= kisalli.ohpe %></td>
+    <td><%= kisalli.ohja %></td>
+    <td><%= kisalli.ohpes %></td>
+    <td><%= kisalli.ohjas %></td>
+    <td><%= link_to 'Show', kisalli_path(kisalli.key) %></td>
+    <td><%= link_to 'Edit', edit_kisalli_path(kisalli.key) %></td>
+    <td><%= link_to 'Destroy', kisalli.key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
