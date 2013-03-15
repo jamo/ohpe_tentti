@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130308194054) do
+ActiveRecord::Schema.define(:version => 20130315171946) do
 
   create_table "answers", :force => true do |t|
     t.string   "nick"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20130308194054) do
     t.string   "name"
     t.string   "opnro"
     t.string   "sposti"
-    t.integer  "opintopisteita"
+    t.string   "opintopisteita"
     t.text     "miksi"
     t.decimal  "opintojen_ka"
     t.string   "aiemmin"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(:version => 20130308194054) do
     t.boolean  "deprecated",     :default => false
     t.boolean  "ohpe",           :default => false
     t.boolean  "ohja",           :default => false
+    t.boolean  "ohpes",          :default => false
+    t.boolean  "ohjas",          :default => false
   end
 
   create_table "questions", :force => true do |t|

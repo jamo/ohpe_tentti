@@ -10,27 +10,27 @@
   .control-group
     = f.label "Nimi"
     %br/
-    = f.text_field :name
+    = f.text_field :name, :class => 'text_field'
   .control-group
     = f.label "Opiskelijanumero"
     %br/
-    = f.text_field :opnro
+    = f.text_field :opnro, :class => 'text_field'
   .control-group
     = f.label "Sähköpostiosoite"
     %br/
-    = f.text_field :sposti
+    = f.text_field :sposti, :class => 'text_field'
   .control-group
     = f.label "opintopistemäärä"
     %br/
-    = f.number_field :opintopisteita
+    = f.text_field :opintopisteita, :class => 'text_field'
   .control-group
     = f.label "Opintopisteiden keskiarvo"
     %br/
-    = f.text_field :opintojen_ka
+    = f.text_field :opintojen_ka, :class => 'text_field'
   .control-group
     = f.label "Oletko ollut aikaisemmin pajaohjaajana/kisällinä/assarina? Jos niin mitä?"
     %br/
-    = f.text_field :aiemmin
+    = f.text_field :aiemmin, :class => 'text_field'
   .control-group
     = f.label "Haetko kisalliksi/ohjaajaksi?"
     %br/
@@ -43,23 +43,30 @@
   .control-group
     =f.label "Haluatko ohpeen/ohjaan"
     %br/
-    = f.label "OhPeen"
+    = f.label "Kesä OhPeen"
     = f.check_box :ohpe, :class => "checkox"
     %br/
-    = f.label "OhJaan"
+    = f.label "Kesä OhJaan"
     = f.check_box :ohja, :class => "checkox"
+    %br/
+    %br/
+    = f.label "Syksy OhPeen"
+    = f.check_box :ohpes, :class => "checkox"
+    %br/
+    = f.label "Syksy OhJaan"
+    = f.check_box :ohjas, :class => "checkox"
     %br/
   .control-group
     = f.label "Miksi juuri sinä?"
     %br/
-    = f.text_area :miksiSina, class: "input-xlarge"
+    = f.text_area :miksiSina, class: "input-xxlarge"
   .control-group
     = f.label "Mitä odotat kisällöinniltä/ohjaamiselta?"
     %br/
-    = f.text_area :mitaOdotat, class: "input-xlarge"
+    = f.text_area :mitaOdotat, class: "input-xxlarge"
   .control-group
     = f.label "Muuta kommentoitavaa"
     %br/
-    = f.text_area :muuta, class: "input-xlarge"
+    = f.text_area :muuta, class: "input-xxlarge"
   .form-actions
     = f.submit "Tallenna", class: "btn btn-primary"
