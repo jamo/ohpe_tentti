@@ -34,8 +34,10 @@
     <th>Kisalliksi?</th>
     <th>K-OhPeen</th>
     <th>K-OhJaan</th>
-    <th>S-OhPeen</th>
-    <th>S-OhJaan</th>
+    <th>S-OhPeen kisalliksi</th>
+    <th>S-OhJaan kisalliksi</th>
+    <th>S-OhPeen ohjaajaksi</th>
+    <th>S-OhJaan ohjaajaksi</th>
 
     <th></th>
     <th></th>
@@ -61,6 +63,8 @@
     <td><%= kisalli.ohja %></td>
     <td><%= kisalli.ohpes %></td>
     <td><%= kisalli.ohjas %></td>
+    <td><%= kisalli.syksyOhpeOhjaaja %></td>
+    <td><%= kisalli.syksyOhjaOhjaaja %></td>
     <td><%= link_to 'Show', kisalli_path(kisalli.key) %></td>
     <td><%= link_to 'Edit', edit_kisalli_path(kisalli.key) %></td>
     <td><%= link_to 'Destroy', kisalli.key, method: :delete, data: { confirm: 'Are you sure?' } %></td>

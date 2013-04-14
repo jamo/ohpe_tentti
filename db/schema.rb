@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315172805) do
+ActiveRecord::Schema.define(:version => 20130414232239) do
 
   create_table "answers", :force => true do |t|
     t.string   "nick"
@@ -50,17 +50,19 @@ ActiveRecord::Schema.define(:version => 20130315172805) do
     t.text     "mitaOdotat"
     t.text     "muuta"
     t.text     "lempiolut"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.boolean  "ohjaaja"
     t.boolean  "kisalli"
     t.boolean  "tira"
-    t.boolean  "deprecated",     :default => false
-    t.boolean  "ohpe",           :default => false
-    t.boolean  "ohja",           :default => false
-    t.boolean  "ohpes",          :default => false
-    t.boolean  "ohjas",          :default => false
+    t.boolean  "deprecated",       :default => false
+    t.boolean  "ohpe",             :default => false
+    t.boolean  "ohja",             :default => false
+    t.boolean  "ohpes",            :default => false
+    t.boolean  "ohjas",            :default => false
     t.string   "key"
+    t.boolean  "syksyOhpeOhjaaja", :default => false
+    t.boolean  "syksyOhjaOhjaaja", :default => false
   end
 
   add_index "kisallis", ["key"], :name => "index_kisallis_on_key"

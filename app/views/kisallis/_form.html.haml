@@ -34,39 +34,46 @@
   .control-group
     = f.label "Haetko kisalliksi/ohjaajaksi?"
     %br/
-    = f.label "Ohjaajaksi"
-    = f.check_box :ohjaaja, :class => "checkox"
-    %br/
-    = f.label "Kisälliksi"
-    = f.check_box :kisalli, :class => "checkox"
+    -# = f.label "Ohjaajaksi"
+    -# = f.check_box :ohjaaja, :class => "checkox"
+    -# %br/
+    -# = f.label "Kisälliksi"
+    -# = f.check_box :kisalli, :class => "checkox"
     %br/
   .control-group
     =f.label "Haluatko ohpeen/ohjaan"
     %br/
-    = f.label "Kesä OhPeen"
+    = f.label "Kesä OhPeen kisalliksi"
     = f.check_box :ohpe, :class => "checkox"
     %br/
-    = f.label "Kesä OhJaan"
+    = f.label "Kesä OhJaan kisalliksi"
     = f.check_box :ohja, :class => "checkox"
     %br/
     %br/
-    = f.label "Syksy OhPeen"
+    = f.label "Syksy OhPeen kisalliksi"
     = f.check_box :ohpes, :class => "checkox"
     %br/
-    = f.label "Syksy OhJaan"
+    = f.label "Syksy OhJaan kisalliksi"
     = f.check_box :ohjas, :class => "checkox"
+    %br/
+    %br/
+    = f.label "Syksy OhPeen ohjaajaksi"
+    = f.check_box :syksyOhpeOhjaaja, :class => "checkox"
+    %br/
+    = f.label "Syksy OhJaan ohjaajaksi"
+    = f.check_box :syksyOhjaOhjaaja, :class => "checkox"
     %br/
   .control-group
     = f.label "Miksi juuri sinä?"
     %br/
-    = f.text_area :miksiSina, class: "input-xxlarge"
+    = f.text_area :miksiSina, class: "input-xxlarge", rows: 3
   .control-group
     = f.label "Mitä odotat kisällöinniltä/ohjaamiselta?"
     %br/
-    = f.text_area :mitaOdotat, class: "input-xxlarge"
+    = f.text_area :mitaOdotat, class: "input-xxlarge", rows: 3
   .control-group
     = f.label "Muuta kommentoitavaa"
     %br/
-    = f.text_area :muuta, class: "input-xxlarge"
+    = f.text_area :muuta, class: "input-xxlarge", rows: 3
   .form-actions
     = f.submit "Tallenna", class: "btn btn-primary"
