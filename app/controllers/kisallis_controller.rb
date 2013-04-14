@@ -83,7 +83,7 @@ class KisallisController < ApplicationController
   # DELETE /kisallis/1
   # DELETE /kisallis/1.json
   def destroy
-    @kisalli = Kisalli.find(params[:id])
+    @kisalli = Kisalli.find_by_key(params[:id])
     @kisalli.destroy
 
     respond_to do |format|
