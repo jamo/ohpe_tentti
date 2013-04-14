@@ -67,7 +67,7 @@
     <td><%= kisalli.syksyOhjaOhjaaja %></td>
     <td><%= link_to 'Show', kisalli_path(kisalli.key) %></td>
     <td><%= link_to 'Edit', edit_kisalli_path(kisalli.key) %></td>
-    <td><%= link_to 'Destroy', kisalli.key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', kisalli_path(kisalli.key), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
