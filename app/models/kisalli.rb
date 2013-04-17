@@ -1,5 +1,5 @@
 class Kisalli < ActiveRecord::Base
-  attr_accessible :aiemmin, :lempiolut, :miksi, :miksiSina, :mitaOdotat, :muuta, :name, :opintojen_ka, :opintopisteita, :opnro, :sposti, :ohjaaja, :kisalli, :tira, :ohpe, :ohja, :ohpes, :ohjas, :key, :syksyOhpeOhjaaja, :syksyOhjaOhjaaja
+  attr_accessible :aiemmin, :lempiolut, :miksi, :miksiSina, :mitaOdotat, :muuta, :name, :opintojen_ka, :opintopisteita, :opnro, :sposti, :ohjaaja, :kisalli, :tira, :ohpe, :ohja, :ohpes, :ohjas, :key, :syksyOhpeOhjaaja, :syksyOhjaOhjaaja, :lapio, :c, :tito, :tikape, :tiralaskarit, :ohpe1, :ohja1
 
   scope :current, where(deprecated: false)
 

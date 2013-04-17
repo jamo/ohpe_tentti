@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130414232239) do
+ActiveRecord::Schema.define(:version => 20130417191508) do
 
   create_table "answers", :force => true do |t|
     t.string   "nick"
@@ -63,6 +63,13 @@ ActiveRecord::Schema.define(:version => 20130414232239) do
     t.string   "key"
     t.boolean  "syksyOhpeOhjaaja", :default => false
     t.boolean  "syksyOhjaOhjaaja", :default => false
+    t.boolean  "lapio",            :default => false
+    t.boolean  "c",                :default => false
+    t.boolean  "ohpe1",            :default => false
+    t.boolean  "ohja1",            :default => false
+    t.boolean  "tikape",           :default => false
+    t.boolean  "tito",             :default => false
+    t.boolean  "tiralaskarit",     :default => false
   end
 
   add_index "kisallis", ["key"], :name => "index_kisallis_on_key"

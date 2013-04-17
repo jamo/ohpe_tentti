@@ -41,28 +41,61 @@
     -# = f.check_box :kisalli, :class => "checkox"
     %br/
   .control-group
-    =f.label "Haluatko ohpeen/ohjaan"
+    =f.label "Haluatko:"
     %br/
+    = f.check_box :ohpe1, :class => "checkox"
     = f.label "Kesä OhPeen kisalliksi"
-    = f.check_box :ohpe, :class => "checkox"
     %br/
+    = f.check_box :ohja1, :class => "checkox"
     = f.label "Kesä OhJaan kisalliksi"
-    = f.check_box :ohja, :class => "checkox"
     %br/
     %br/
-    = f.label "Syksy OhPeen kisalliksi"
     = f.check_box :ohpes, :class => "checkox"
+    = f.label "Syksylle 1. periodille kisalliksi"
     %br/
-    = f.label "Syksy OhJaan kisalliksi"
     = f.check_box :ohjas, :class => "checkox"
+    = f.label "Syksylle 2. periodille kisalliksi"
     %br/
     %br/
-    = f.label "Syksy OhPeen ohjaajaksi"
     = f.check_box :syksyOhpeOhjaaja, :class => "checkox"
+    = f.label "Syksylle 1 periodille ohjaajaksi"
     %br/
-    = f.label "Syksy OhJaan ohjaajaksi"
     = f.check_box :syksyOhjaOhjaaja, :class => "checkox"
+    = f.label "Syksylle 2 periodille ohjaajaksi"
     %br/
+    %br/
+    = f.label "Voin ohjata syksyllä kurssia"
+    %br/
+    %br/
+    = f.check_box :ohpe, :class => "checkox"
+    = f.label "Ohjelmoinnin perusteet"
+    %br/
+    = f.check_box :ohja, :class => "checkox"
+    = f.label "Ohjelmoinnin jatkokurssi"
+    %br/
+    = f.check_box :tira, :class => "checkox"
+    = f.label "Tietorakenteet kurssin pajatehtäviä"
+    %br/
+    = f.check_box :tiralaskarit, :class => "checkox"
+    = f.label "Tietorakenteet kurssin laskuharjoituksien tekemistä (ei vetää laskareita)"
+    
+    %br/
+    = f.check_box :lapio, :class => "checkox"
+    = f.label "Tietokone työvälineenä"
+    %br/
+    = f.check_box :c, :class => "checkox"
+    = f.label "C"
+    %br/
+    %br/
+    = f.label "Voitko tarvittaessa kisällöinnin/ohjauksen ohella kisällöidä/ohjata seuraavia kursseja"
+    %br/
+    %br/
+    = f.check_box :tikape, :class => "checkox"
+    = f.label "Tietokantojen perusteet"
+    %br/
+    = f.check_box :tito, :class => "checkox"
+    = f.label "Tietokoneen toiminta"
+
   .control-group
     = f.label "Miksi juuri sinä?"
     %br/
