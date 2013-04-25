@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class AnswersController < ApplicationController
   skip_before_filter :authenticate_user, :only => [ :new, :create, :show]
   skip_before_filter :can_access? , :only => [:new, :create, :show]
@@ -48,7 +46,7 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.json
   def create
-    return respond_access_denied "Vastausaika on päättynyt"
+    #return respond_access_denied "Vastausaika on päättynyt"
     @answer = Answer.new(params[:answer])
     @answer.deprecated = false
 
