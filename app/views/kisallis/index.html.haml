@@ -1,0 +1,31 @@
+-#<h1>Listing kisallis</h1>
+-#<p>Filtteröi tuloksia: </p>
+-#<%= form_tag kisallis_path, :method => :get do  %>
+-#    <%= label  :kisalli, 'Kisalli' %>
+-#    <%= check_box_tag :kisalli, '1',params[:kisalli] %>
+-#
+-#    <%= label  :ohjaaja, 'ohjaaja' %>
+-#    <%= check_box_tag :ohjaaja, '1', params[:ohjaaja] %>
+-#
+-#    <%= label  :tira, 'tira' %>
+-#    <%= check_box_tag :tira, '1', params[:tira] %>
+-#
+-#    <%= label :ka, 'Keskiarvo vähintään' %>
+-#    <%= text_field_tag :ka, params[:ka] %>
+-#
+-#    <%= submit_tag 'Refresh' %>
+-#
+-#<% end %>
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      - Kisalli.attribute_names.each do |attr|
+        %th= attr
+  %tbody
+    - @kisallis.each do |kisalli|
+      %tr
+        - kisalli.attributes.each do |attr|
+          %td= attr
+
+
+= link_to 'New Kisalli', new_kisalli_path
