@@ -19,8 +19,40 @@
 %table.table.table-striped.table-hover
   %thead
     %tr
-      - Kisalli.attribute_names.each do |attr|
-        %th= attr
+      %th= id
+      %th= Nimi
+      %th= Opiskelijanumero
+      %th= Sähkö
+      %th= opintopisteita
+      %th= miksi
+      %th= Kurssiarvosanojen keskiarvo
+      %th= Aiemmin jossain opetustehtävässä
+      %th= Miksi juuri sinä?
+      %th= Mitä odotat
+      %th= Muuta/Kommentteja
+      %th= LempiOlut :P
+      %th= created_at
+      %th= updated_at
+      %th= ohjaaja OLD
+      %th= kisalli OLD 
+      %th= TiraPaja
+      %th= deprecated OLD
+      %th= Syksy ohpe
+      %th= Syksy ohja
+      %th= Kisalli 1. periodilla
+      %th= Kisalli 2. periodilla
+      %th= key
+      %th= Ohjaaja 2. periodilla
+      %th= Ohjaaja 2. periodilla
+      %th= Lapio
+      %th= C
+      %th= KesaOhpe
+      %th= KesaOhja
+      %th= TiKaPe
+      %th= TiTo
+      %th= TiRaLaskarit
+      -# Kisalli.attribute_names.each do |attr|
+      -#  %th= attr
   %tbody
     - @kisallis.each do |kisalli|
       %tr
