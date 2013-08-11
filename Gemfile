@@ -4,6 +4,7 @@ gem 'rails'
 gem 'haml-rails'
 
 gem 'turbolinks'
+gem 'rack-cors', :require => 'rack/cors'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
