@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   #protected
   def authenticate_user
+    return check_api_key(params[:api_key]) if params[:api_key]
     user = User.find_by_id(session[:user_id])
     unless user
       flash[:error] = "Log in"
@@ -16,6 +17,17 @@ class ApplicationController < ActionController::Base
       @current_user = user
       return true
     end
+  end
+
+  def check_api_key(api_key)
+    user = User.find_by_api_key(api_key)
+    unless user
+      return false
+    else
+      @current_user = user
+      return true
+    end
+
   end
 
   def authenticate_user!
@@ -32,7 +44,7 @@ class ApplicationController < ActionController::Base
  end
 
   def current_user
-    @current_user = User.find_by_id(session[:user_id]) # Use find_by_id to get nil instead of an error if user doesn't exist
+    @current_user = User.find_by_id(session[:user_id]) || User.find_by_api_key(params[:api_key]) # Use find_by_id to get nil instead of an error if user doesn't exist
     return  @current_user if @current_user
     @current_user= User.new :username => 'guest'
   end
