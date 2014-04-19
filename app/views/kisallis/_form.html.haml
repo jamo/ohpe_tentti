@@ -33,59 +33,58 @@
     = f.text_field :aiemmin, :class => 'text_field'
   .control-group
     =f.label "Haluatko:"
-    %br/
-    = f.check_box :ohpe1, :class => "checkox"
-    = f.label "Kesä OhPeen kisalliksi"
-    %br/
-    = f.check_box :ohja1, :class => "checkox"
-    = f.label "Kesä OhJaan kisalliksi"
-    %br/
+    -#%br/
+    -#= f.check_box :ohpe1, :class => "checkox"
+    -#= f.label "OhPeen kisalliksi"
+    -#%br/
+    -#= f.check_box :ohja1, :class => "checkox"
+    -#= f.label "OhJaan kisalliksi"
+    -#%br/
     %br/
     = f.check_box :ohpes, :class => "checkox"
-    = f.label "Syksylle 1 periodille kisalliksi"
+    = f.label "OhPeen kisalliksi"
     %br/
     = f.check_box :ohjas, :class => "checkox"
-    = f.label "Syksylle 2 periodille kisalliksi"
+    = f.label "OhJaan kisalliksi"
     %br/
     %br/
     = f.check_box :syksyOhpeOhjaaja, :class => "checkox"
-    = f.label "Syksylle 1 periodille ohjaajaksi"
+    = f.label "OhPeen ohjaajaksi"
     %br/
     = f.check_box :syksyOhjaOhjaaja, :class => "checkox"
-    = f.label "Syksylle 2 periodille ohjaajaksi"
+    = f.label "OhJaan ohjaajaksi"
     %br/
+    -#%br/
+    -#= f.label "Voin ohjata kurssia kurssia ohpen/ohjan kisällöinnin/ohjauksen ohessa"
+    -#%br/
+    -#%br/
+    -#= f.check_box :ohpe, :class => "checkox"
+    -#= f.label "Ohjelmoinnin perusteet"
+    -#%br/
+    -#= f.check_box :ohja, :class => "checkox"
+    -#= f.label "Ohjelmoinnin jatkokurssi"
     %br/
-    = f.label "Voin ohjata syksyllä kurssia"
+    -#= f.check_box :tira, :class => "checkox"
+    -#= f.label "Tietorakenteet kurssin pajatehtäviä"
     %br/
-    %br/
-    = f.check_box :ohpe, :class => "checkox"
-    = f.label "Ohjelmoinnin perusteet"
-    %br/
-    = f.check_box :ohja, :class => "checkox"
-    = f.label "Ohjelmoinnin jatkokurssi"
-    %br/
-    = f.check_box :tira, :class => "checkox"
-    = f.label "Tietorakenteet kurssin pajatehtäviä"
-    %br/
-    = f.check_box :tiralaskarit, :class => "checkox"
-    = f.label "Tietorakenteet kurssin laskuharjoituksien tekemistä (ei vetää laskareita)"
-    
-    %br/
-    = f.check_box :lapio, :class => "checkox"
-    = f.label "Tietokone työvälineenä"
-    %br/
-    = f.check_box :c, :class => "checkox"
-    = f.label "C"
-    %br/
-    %br/
-    = f.label "Voitko tarvittaessa kisällöinnin/ohjauksen ohella kisällöidä/ohjata seuraavia kursseja"
-    %br/
+    -#= f.check_box :tiralaskarit, :class => "checkox"
+    -#= f.label "Tietorakenteet kurssin laskuharjoituksien tekemistä (ei vetää laskareita)"
+
+    -#%br/
+    -#= f.check_box :lapio, :class => "checkox"
+    -#= f.label "Tietokone työvälineenä"
+    -#%br/
+    -#= f.check_box :c, :class => "checkox"
+    -#= f.label "C"
+    -#%br/
+    -#%br/
+    = f.label "Voitko kisällöinnin/ohjauksen ohella kisällöidä/ohjata seuraavia kursseja"
     %br/
     = f.check_box :tikape, :class => "checkox"
     = f.label "Tietokantojen perusteet"
     %br/
-    = f.check_box :tito, :class => "checkox"
-    = f.label "Tietokoneen toiminta"
+    -#= f.check_box :tito, :class => "checkox"
+    -#= f.label "Tietokoneen toiminta"
 
   .control-group
     = f.label "Miksi juuri sinä?"
@@ -96,7 +95,7 @@
     %br/
     = f.text_area :mitaOdotat, class: "input-xxlarge", rows: 3
   .control-group
-    = f.label "Muuta kommentoitavaa"
+    = f.label "Muuta kommentoitavaa, nick, jos ircssä"
     %br/
     = f.text_area :muuta, class: "input-xxlarge", rows: 3
   .form-actions

@@ -5,7 +5,9 @@ class Jatko < ActiveRecord::Base
 
   before_create :generate_key
 
-  def generate_key 
+  scope :current, where(deprecated: false)
+
+  def generate_key
     self.key = Digest::SHA1.hexdigest(Time.now.to_s+Random.rand.to_s+self.nick).slice(0..15)
   end
 

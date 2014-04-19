@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130811213545) do
+ActiveRecord::Schema.define(:version => 20131012082837) do
 
   create_table "answers", :force => true do |t|
     t.string   "nick"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130811213545) do
     t.datetime "updated_at",                    :null => false
     t.string   "key"
     t.boolean  "tira",       :default => false
+    t.boolean  "deprecated", :default => false
   end
 
   add_index "jatkos", ["key"], :name => "index_jatkos_on_key"

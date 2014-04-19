@@ -14,8 +14,12 @@ class Kisalli < ActiveRecord::Base
 
   before_create :generate_key
 
-  def generate_key 
+  def generate_key
     self.key = Digest::SHA1.hexdigest(Time.now.to_s+Random.rand.to_s+self.opnro+self.miksiSina).slice(0..40)
   end
 
+
+  def opintojen_ka=(ka)
+    write_attribute :opintojen_ka, ka.gsub(",", ".").to_f
+  end
 end

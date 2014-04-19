@@ -1,7 +1,7 @@
 class KisallisController < ApplicationController
   skip_before_filter :authenticate_user, :only => [ :new, :create, :show]
   skip_before_filter :can_access? , :only => [:new, :create, :show]
-  
+
   # GET /kisallis
   # GET /kisallis.json
   def index
@@ -51,6 +51,7 @@ class KisallisController < ApplicationController
   # POST /kisallis
   # POST /kisallis.json
   def create
+#    return
     @kisalli = Kisalli.new(params[:kisalli])
 
     respond_to do |format|

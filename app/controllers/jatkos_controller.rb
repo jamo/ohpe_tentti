@@ -2,7 +2,7 @@ class JatkosController < ApplicationController
   skip_before_filter :authenticate_user, :only => [ :new, :create, :show]
   skip_before_filter :can_access? , :only => [:new, :create, :show]
   def index
-    @jatkos = Jatko.all
+    @jatkos = Jatko.current
 
     respond_to do |format|
       format.html # index.html.erb

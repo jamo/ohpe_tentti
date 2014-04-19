@@ -7,7 +7,7 @@ Pastebin::Application.routes.draw do
   resources :answers
   resources :sessions
   resources :users
-  
+
   match "signup", :to => "users#new"
   match "login", :to => "sessions#login"
   match "logout", :to => "sessions#logout"

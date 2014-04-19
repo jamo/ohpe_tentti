@@ -1,7 +1,8 @@
+# encoding: utf-8
 class AnswersController < ApplicationController
   skip_before_filter :authenticate_user, :only => [ :new, :create, :show]
   skip_before_filter :can_access? , :only => [:new, :create, :show]
- 
+
   # GET /answers
   # GET /answers.json
   def index
